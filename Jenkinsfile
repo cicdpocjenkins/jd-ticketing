@@ -9,7 +9,7 @@ pipeline {
                 mvn compile
             }
         }
-        stage('build') {
+        stage('test') {
             steps {
                
                 echo 'hello test'
