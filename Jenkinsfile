@@ -9,7 +9,7 @@ pipeline {
                 //sh 'mvn --version'
                 echo 'hello build'
                 sh 'mvn validate'
-                sh 'mvn compile'
+                sh 'mvn compile -X'
             }
         }
         stage('test') {
