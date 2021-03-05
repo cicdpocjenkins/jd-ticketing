@@ -20,5 +20,13 @@ pipeline {
                 
             }
         }
+        stage('docker image') {
+            steps {
+               
+                echo 'hello docker'
+                sh 'docker version'
+                
+            }
+        }
     }
 }
