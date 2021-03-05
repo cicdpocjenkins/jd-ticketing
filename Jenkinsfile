@@ -20,6 +20,14 @@ pipeline {
                 
             }
         }
+         stage('package') {
+            steps {
+               
+                echo 'hello package'
+                sh 'mvn package'
+                
+            }
+        }
         stage('docker image') {
             steps {
                
