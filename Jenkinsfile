@@ -33,6 +33,7 @@ pipeline {
             steps {
                
                 echo 'hello docker'
+                sh 'echo $(pwd)'
                 sh ' docker version'
                 sh ' docker build --tag=jd-ticketing:latest . '
                 
