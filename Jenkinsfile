@@ -5,15 +5,15 @@ pipeline {
             steps {
                 //sh 'mvn --version'
                 echo 'hello build'
-                mvn validate
-                mvn compile
+                sh 'mvn validate'
+                sh 'mvn compile'
             }
         }
         stage('test') {
             steps {
                
                 echo 'hello test'
-                mvn test
+                sh 'mvn test'
                 
             }
         }
