@@ -25,6 +25,7 @@ pipeline {
                
                 echo 'hello docker'
                 sh ' docker version'
+                sh ' docker build --tag=jd-ticketing:latest . '
                 
             }
         }
