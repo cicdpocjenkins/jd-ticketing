@@ -37,6 +37,7 @@ pipeline {
                 sh 'echo $(pwd)'
                 //sh ' docker version'
                 sh ' docker build --tag=jd-ticketing:latest . '
+                sh 'docker tag jd-ticketing:latest cicdpocjenkins/cybertekrepo:jd-ticketing'
                 
             }
         }
@@ -44,7 +45,7 @@ pipeline {
         stage('docker push'){
             steps {
              sh 'docker login --password=cybertek1234* --username=cicdpocjenkins'   
-             sh 'docker image push jd-ticketing:latest'   
+             sh 'docker image push cicdpocjenkins/cybertekrepo:jd-ticketing'   
             }
         }
     }
