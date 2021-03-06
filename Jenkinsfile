@@ -48,5 +48,15 @@ pipeline {
              sh 'docker image push cicdpocjenkins/cybertekrepo:jd-ticketing'   
             }
         }
+        
+        stage('AWS Cloud deploy'){
+            steps {
+                withAWS(credentials:'awscloud', region:'eu-north-1') {
+                       def accounts = listAWSAccounts()
+                    echo accounts
+                  }
+                
+            }
+        }
     }
 }
