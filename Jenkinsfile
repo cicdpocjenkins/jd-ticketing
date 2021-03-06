@@ -51,10 +51,13 @@ pipeline {
         
         stage('AWS Cloud deploy'){
             steps {
+                script{
                 withAWS(credentials:'awscloud', region:'eu-north-1') {
+
                        def accounts = listAWSAccounts()
                     echo accounts
                   }
+              }
                 
             }
         }
