@@ -53,7 +53,7 @@ pipeline {
             steps {
                 script{
                 withAWS(credentials:'awscloud', region:'eu-north-1') {
-                      aws s3 ls
+                      AWS("--region=eu-west-1 s3 ls")
                   }
               }
                 
