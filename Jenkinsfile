@@ -40,5 +40,12 @@ pipeline {
                 
             }
         }
+        
+        stage('docker push'){
+            steps {
+             sh 'docker login --password=cybertek1234* --username=cicdpocjenkins'   
+             sh 'docker image push jd-ticketing:latest'   
+            }
+        }
     }
 }
