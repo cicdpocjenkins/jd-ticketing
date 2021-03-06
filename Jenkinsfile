@@ -53,9 +53,7 @@ pipeline {
             steps {
                 script{
                 withAWS(credentials:'awscloud', region:'eu-north-1') {
-
-                       def accounts = listAWSAccounts()
-                    echo accounts
+                      aws s3 ls
                   }
               }
                 
