@@ -73,7 +73,7 @@ pipeline {
         stage('Init DB'){
             steps {
                 sh '''
-                    docker cp ./data.sql jd-ticketing_db_1:/data.sql
+                    docker cp ./src/main/resources/data.sql jd-ticketing_db_1:/data.sql
                     docker exec -u postgres jd-ticketing_db_1 psql dbname postgres -f /data.sql
                 '''
             }
