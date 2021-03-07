@@ -59,8 +59,10 @@ pipeline {
         stage ('Clean'){
             steps {
                 sh 'docker-compose down'
+                //
                // sh 'docker rm jd-ticketing_jd-ticketing_1'
                // sh 'docker rm jd-ticketing_db_1'
+               //  
                 sh 'docker volume rm -f jd-ticketing_database-data'
             }
         }
