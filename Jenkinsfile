@@ -37,12 +37,14 @@ pipeline {
                 sh 'echo $(pwd)'
                 //sh ' docker version'
                 sh ' docker build --tag=jd-ticketing:latest . '
+                script {
                  try {
                         sh "docker rmi cicdpocjenkins/cybertekrepo"
                     } catch (err) {
                         echo err.getMessage()
                         echo "Error detected, but we will continue."
                     }
+                }
                 sh 'docker tag jd-ticketing:latest cicdpocjenkins/cybertekrepo:jd-ticketing'
                 
             }
