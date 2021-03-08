@@ -1,4 +1,2 @@
 # cicd POC
 Jenkins test
-
-...
