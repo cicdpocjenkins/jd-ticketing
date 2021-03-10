@@ -39,7 +39,7 @@ pipeline {
                 sh ' docker build --tag=jd-ticketing:latest . '
                 script {
                  try {
-                        sh "docker rmi cicdpocjenkins/cybertekrepo"
+                        sh "docker images -q |xargs docker rmi"
                     } catch (err) {
                         echo err.getMessage()
                         echo "Error detected, but we will continue."
