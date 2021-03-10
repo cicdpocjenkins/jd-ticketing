@@ -39,7 +39,11 @@ pipeline {
                 sh ' docker build --tag=jd-ticketing:latest . '
                 script {
                  try {
-                        sh "docker images -q |xargs docker rmi"
+                        sh '''
+                        docker-compose down
+                        docker rmi -f $(docker images | grep "jd-ticketing" | awk "{print \$3}")
+
+                        '''
                     } catch (err) {
                         echo err.getMessage()
                         echo "Error detected, but we will continue."
