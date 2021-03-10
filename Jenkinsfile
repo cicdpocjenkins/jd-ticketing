@@ -41,7 +41,7 @@ pipeline {
                  try {
                         sh '''
                         docker-compose down
-                        docker rmi -f $(docker images | grep "jd-ticketing" | awk "{print \$3}")
+                        #docker rmi -f $(docker images | grep "jd-ticketing" | awk "{print \$3}")
 
                         '''
                     } catch (err) {
